@@ -1,2 +1,9 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<%= @song.name %><br>
+<%= @song.text %><br>
+<%= @song.desc %><br>
+<% @song.songs.each do |bodya|%>
+<br>
+ <audio controls>
+  <source src="<%= bodya.url %>" type="audio/mpeg">
+ </audio>
+<% end %>
