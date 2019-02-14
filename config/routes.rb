@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :songs #it's links in the browser
   devise_for :users #it's links in the browser,
   #example: http://localhost:3000/users/sign_up
+  resources :comments
 end

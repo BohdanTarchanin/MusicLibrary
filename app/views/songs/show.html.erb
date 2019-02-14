@@ -15,3 +15,21 @@ Zalogintes` wtobi You can listen songs, thanks
 <%= link_to "Login", new_user_session_path %>
 <%= link_to "Sign up", new_user_registration_path %>
 <% end %>
+
+<!-- create comment -->
+
+<%= form_for :comment, url:comments_path do |f| %>
+<%= render 'comments/comment', f:f%>
+<%= f.hidden_field :object_type, value: @song.class.name%>
+<%= f.hidden_field :object_id, value: @song.id%>
+<%= f.submit "Create" %>
+<% end %>
+
+
+<!-- show all comments -->
+
+<% Comment.where(object: @song).each do |comment| %>
+<br>User:
+<%= comment.user.email.split('@').first %><br>
+<%= comment.text%><hr>
+<%end%>
