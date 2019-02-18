@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
 
   def index
-    @songs = Song.all #show all songs in site: localhost:3000/songs . U nas it's root page
+    @songs = Song.all #show all songs in site: localhost:3000/songs . 
   end
 
   def show
